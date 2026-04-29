@@ -38,7 +38,7 @@ controller_server:
       publish_feedback: False
           
       # Robot
-      max_vel_x: 0.7
+      max_vel_x: 0.8
       max_vel_theta: 2.0 
       acc_lim_x: 3.5
       acc_lim_theta: 3.2
