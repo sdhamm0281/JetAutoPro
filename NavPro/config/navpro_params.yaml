@@ -1,0 +1,10 @@
+navpro_node:
+  ros__parameters:
+    # Reference frame for all navigation goals
+    map_frame: map
+
+    # Match ASR_LANGUAGE environment variable: 'English' or 'Chinese'
+    language: English
+
+    # Topic that nav2 monitors for goal poses
+    goal_topic: /goal_pose
