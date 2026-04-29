@@ -1,0 +1,8 @@
+large_models/
+large_models_examples/
+__pycache__/
+*.pyc
+*.pyo
+build/
+install/
+log/
