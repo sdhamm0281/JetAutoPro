@@ -1,10 +1,9 @@
 import os
 from ament_index_python.packages import get_package_share_directory
 from launch import LaunchDescription, LaunchService
-from launch.actions import DeclareLaunchArgument, IncludeLaunchDescription
+from launch.actions import DeclareLaunchArgument, IncludeLaunchDescription, OpaqueFunction
 from launch.launch_description_sources import PythonLaunchDescriptionSource
 from launch.substitutions import LaunchConfiguration
-from launch.actions import OpaqueFunction
 
 
 def launch_setup(context):
@@ -17,10 +16,12 @@ def launch_setup(context):
 
     sim = LaunchConfiguration('sim').perform(context)
 
+    # Include only slam_base — robot base nodes are already running via bringup
     slam_launch = IncludeLaunchDescription(
-        PythonLaunchDescriptionSource(os.path.join(slam_pkg, 'launch', 'slam.launch.py')),
+        PythonLaunchDescriptionSource(
+            os.path.join(slam_pkg, 'launch', 'include', 'slam_base.launch.py')),
         launch_arguments={
-            'sim': sim,
+            'use_sim_time': 'true' if sim == 'true' else 'false',
             'enable_save': 'true',
         }.items(),
     )
