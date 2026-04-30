@@ -39,12 +39,12 @@
     # General Parameters
     use_scan_matching: true
     use_scan_barycenter: true
-    minimum_travel_distance: 0.1
-    minimum_travel_heading: 0.5
-    scan_buffer_size: 20
+    minimum_travel_distance: 0.05
+    minimum_travel_heading: 0.2
+    scan_buffer_size: 30
     scan_buffer_maximum_scan_distance: 12.0
     link_match_minimum_response_fine: 0.1
-    link_scan_maximum_distance: 1.5
+    link_scan_maximum_distance: 2.5
     loop_search_maximum_distance: 3.0
     do_loop_closing: true
     loop_match_minimum_chain_size: 10
@@ -53,7 +53,7 @@
     loop_match_minimum_response_fine: 0.45
 
     # Correlation Parameters - Correlation Parameters
-    correlation_search_space_dimension: 0.5
+    correlation_search_space_dimension: 0.8
     correlation_search_space_resolution: 0.01
     correlation_search_space_smear_deviation: 0.1
 
@@ -63,8 +63,8 @@
     loop_search_space_smear_deviation: 0.03
 
     # Scan Matcher Parameters
-    distance_variance_penalty: 0.5
-    angle_variance_penalty: 1.0
+    distance_variance_penalty: 0.3
+    angle_variance_penalty: 0.8
 
     fine_search_angle_offset: 0.00349
     coarse_search_angle_offset: 0.349
